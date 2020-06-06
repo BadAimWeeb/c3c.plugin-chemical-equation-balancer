@@ -1,0 +1,25 @@
+{
+	"plugin_name": "Chemical Equation Balancer",
+	"plugin_scope": "chemequbal",
+	"plugin_exec": "main.js",
+	"command_map": {
+		"chemistry": {
+			"hargs": {
+				"vi_VN": "<phương trình cần cân bằng>",
+				"en_US": "<an equation needed to be balanced>"
+			},
+			"hdesc": {
+				"vi_VN": "Cân bằng 1 phương trình hoá học",
+				"en_US": "Balance a chemical equation"
+			},
+			"fscope": "balance",
+			"compatibly": 0
+		}
+	},
+	"author": "UIRI",
+	"version": "0.1",
+	"node_depends": {
+		"jsdom": ""
+	},
+	"complied_for": "0.4.0"
+}
