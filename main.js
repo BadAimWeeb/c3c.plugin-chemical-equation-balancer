@@ -64,13 +64,13 @@ var balance = function balance(type, data) {
 		}
 	}
 	
-	var resultText = "";
-	var nodesList = document.getElementById("balanced").childNodes;
+	let resultText = "";
+	let nodesList = document.getElementById("balanced").childNodes;
 	for (let i in nodesList) {
 		switch (nodesList[i].className) {
 			case "coefficient":
 			case "rightarrow":
-			case "plus"
+			case "plus":
 				resultText += nodesList[i].innerHTML;
 				break;
 			case "term":
