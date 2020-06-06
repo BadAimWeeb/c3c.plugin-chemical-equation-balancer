@@ -8,8 +8,8 @@ let window = balancerHTML.window;
 let document = balancerHTML.window.document;
 
 var mapReplace = function mapReplace(map, str) {
-	for (let orginal in map) {
-		str = str.replace(new RegExp(original, "g"), map[original]);
+	for (let original in map) {
+        str = str.replace(new RegExp(original, "g"), map[original]);
 	}
 	return str;
 }
