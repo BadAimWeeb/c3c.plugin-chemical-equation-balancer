@@ -64,8 +64,8 @@ var balance = function balance(type, data) {
 		}
 	}
 	
-	let resultText = "";
-	let nodesList = document.getElementById("balanced").childNodes;
+	var resultText = "";
+	var nodesList = document.getElementById("balanced").childNodes;
 	for (let i in nodesList) {
 		switch (nodesList[i].className) {
 			case "coefficient":
