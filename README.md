@@ -1,4 +1,3 @@
-# Chemical Equation Balancer
-## for C3CBot
+# C3CBot Plugin - Chemical Equation Balancer
 
 No description.
