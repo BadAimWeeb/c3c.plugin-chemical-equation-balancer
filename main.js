@@ -9,7 +9,7 @@ let document = balancerHTML.window.document;
 
 var mapReplace = function mapReplace(map, str) {
 	for (let original in map) {
-        str = str.replace(new RegExp(original, "g"), map[original]);
+        str = str.replace(new RegExp(original.replace(/[.*+\-?^${}()|[\]\\]/g, '\\$&'), "g"), map[original]);
 	}
 	return str;
 }
