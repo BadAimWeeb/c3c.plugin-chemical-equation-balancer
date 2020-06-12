@@ -77,7 +77,30 @@ var balance = function balance(type, data) {
 				for (let j in nodesList[i].childNodes) {
 					switch (nodesList[i].childNodes[j].tagName) {
 						case "SPAN":
-							resultText += nodesList[i].childNodes[j].innerHTML.replace(/<sub>(.+?)<\/sub>/g, subscript);
+							switch (nodesList[i].childNodes[j].className) {
+								case "element":
+									resultText += nodesList[i].childNodes[j].innerHTML.replace(/<sub>(.+?)<\/sub>/g, subscript);
+									break;
+								case "group":
+									for (let k in nodesList[i].childNodes[j].childNodes) {
+										switch (nodesList[i].childNodes[j].childNodes[k].nodeType) {
+											case 3:
+												resultText += nodesList[i].childNodes[j].childNodes[k].wholeText;
+												break;
+											case 1:
+												switch (nodesList[i].childNodes[j].childNodes[k].tagName) {
+													case "SPAN":
+														resultText += nodesList[i].childNodes[j].childNodes[k].innerHTML.replace(/<sub>(.+?)<\/sub>/g, subscript);
+														break;
+													case "SUB":
+														resultText += subscript(null, nodesList[i].childNodes[j].childNodes[k].innerHTML);
+														break;
+												}
+												break;
+										}
+									}
+									break;
+							}
 							break;
 						case "SUP":
 							resultText += superscript(null, nodesList[i].childNodes[j].innerHTML);
